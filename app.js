@@ -4,10 +4,10 @@ const createError = require('http-errors');
 require('dotenv').config();
 
 // require('./Helpers/init_redis');
-// require('./Helpers/init_mongodb')
+ require('./Helpers/Mongodb.helper')
 // const { verifyAccessToken } = require('./Helpers/jwt_helper');
-//
-// const AuthRoute = require('./Routes/Auth.route');
+
+const NoteRoute = require('./Routes/Note.route');
 //
 const app = express();
 //
@@ -21,13 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 //     res.send('hello from express.');
 // });
 //
-// app.use('/auth', AuthRoute);
-//
+ app.use('/note', NoteRoute);
+
  app.use(async (req, res, next) => {
      next(createError.NotFound());
  });
-//
-//
+
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.send({
