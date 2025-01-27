@@ -1,0 +1,37 @@
+GET http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDY3MDksImV4cCI6MTczODAxMDMwOSwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.8pSXGEDV4jvrQulHyrJAswGY8f64iQayGfaWg70hGXo
+
+
+###Login Route
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+  "email": "behzad.farokhi@outlook.com",
+  "password": "abcdfeij345454"
+}
+
+###Register Route
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+  "email": "DK@DKLINI.com",
+  "password": "drKatzeIstBest"
+}
+
+###Refresh Token Route
+POST http://localhost:3001/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzc4Mzc0MTYsImV4cCI6MTc2OTM5NTAxNiwiYXVkIjoiNjc5NTRiMzYwZGNjNWY4NWM3ODdlZmM5IiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.nFlKbQd3-PtctNdZdAJs0TB0WFbvPmzHk6iXkAyMPic"
+}
+
+###Logout Route
+DELETE http://localhost:3001/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzc4Mzc0MzEsImV4cCI6MTc2OTM5NTAzMSwiYXVkIjoiNjc5NTRiMzYwZGNjNWY4NWM3ODdlZmM5IiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.ZFKUFeP3n3nWt3JFKFtogZkBfXrdNf-zb5UcRxFaWtY"
+}

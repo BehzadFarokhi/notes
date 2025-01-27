@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const NoteController = require('../Controllers/Note.Controller');
+const NoteController = require('../Controllers/Note.controller');
 
 router.post('/add', NoteController.add);
 

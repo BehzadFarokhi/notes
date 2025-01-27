@@ -1,0 +1,49 @@
+###Default Route
+GET http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzc4MzczNDQsImV4cCI6MTczNzg0MDk0NCwiYXVkIjoiNjc5NTM5YmZjYzczYThkNjRkMWVlZDlmIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ._g1465ZXYKsMLrehyhBVlosrXhpLugfvs1X02GMeVQs
+
+
+###Add Route
+POST http://localhost:3001/note/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDc3NjQsImV4cCI6MTczODAxMTM2NCwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.K3tapTjKzymJuw3hsA3IY5EjWnyMQByJeBo9u282Ma4
+
+{
+    "title": "my note number 4576",
+    "description": "my description of the note",
+    "createdAt": "2025-01-26T12:48:45.123Z",
+    "lastModifiedAt": "2025-01-26T12:48:45.123Z"
+}
+
+### Edit Note
+PUT http://localhost:3001/note/edit/6797e5346e8c0a5e25408492
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDc3NjQsImV4cCI6MTczODAxMTM2NCwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.K3tapTjKzymJuw3hsA3IY5EjWnyMQByJeBo9u282Ma4
+
+{
+    "noteId": "679688fb1bcd47fef35d39c5",
+    "title": "my note number 345",
+    "description": "my description of the note",
+    "createdAt": "2025-01-26T12:48:45.123Z",
+    "lastModifiedAt": "2025-01-26T12:48:45.123Z"
+}
+
+### Get Note
+GET http://localhost:3001/note/get/6797e5216e8c0a5e2540848d
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDcyNjAsImV4cCI6MTczODAxMDg2MCwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.XqdP0ZGyLCEmSwFklCqKW35MU9REgfHCKfh4DShwT1f
+
+### List Notes
+GET http://localhost:3001/note/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDkxNDEsImV4cCI6MTczODAxMjc0MSwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.9BRfiKaLhnzPQVzkXq8Yo0HWyAPxje4fGtE6HUPgbyU
+
+### Delete Note
+DELETE http://localhost:3001/note/delete/6797eadb97ec2a5e025d7073
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMDcyNjAsImV4cCI6MTczODAxMDg2MCwiYXVkIjoiNjc5N2M5NjQxNDcxZmEyMzJiMDg4ZjVlIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.XqdP0ZGyLCEmSwFklCqKW35MU9REgfHCKfh4DShwT1Q
+
+
+
+
+
+
+

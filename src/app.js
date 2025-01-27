@@ -2,26 +2,28 @@ const express = require('express');
 const morgan = require('morgan');
 const createError = require('http-errors');
 require('dotenv').config();
+require('./Helpers/Redis.helper');
+require('./Helpers/Mongodb.helper')
+const { verifyAccessToken } = require('./Helpers/JWT.helper');
 
-// require('./Helpers/init_redis');
- require('./Helpers/Mongodb.helper')
-// const { verifyAccessToken } = require('./Helpers/jwt_helper');
-
+const AuthenticationRoute = require('./Routes/Authentication.route');
 const NoteRoute = require('./Routes/Note.route');
-//
+
 const app = express();
-//
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//
-// app.get('/', verifyAccessToken, async (req, res, next) => {
-//     console.log(req.headers['authorization']);
-//
-//     res.send('hello from express.');
-// });
-//
- app.use('/note', NoteRoute);
+
+app.get('/', verifyAccessToken, async (req, res, next) => {
+    console.log(req.headers['authorization']);
+
+    res.send('hello from express.');
+});
+
+app.use('/auth', AuthenticationRoute);
+app.use('/note', verifyAccessToken, NoteRoute);
+
 
  app.use(async (req, res, next) => {
      next(createError.NotFound());
