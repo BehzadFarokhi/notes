@@ -16,8 +16,8 @@ POST http://localhost:3001/auth/register
 Content-Type: application/json
 
 {
-  "email": "DK@DKLINI.com",
-  "password": "drKatzeIstBest"
+  "email": "behzad.farokhi@outlook.com",
+  "password": "abcdfeij345454"
 }
 
 ###Refresh Token Route
@@ -33,5 +33,5 @@ DELETE http://localhost:3001/auth/logout
 Content-Type: application/json
 
 {
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzc4Mzc0MzEsImV4cCI6MTc2OTM5NTAzMSwiYXVkIjoiNjc5NTRiMzYwZGNjNWY4NWM3ODdlZmM5IiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.ZFKUFeP3n3nWt3JFKFtogZkBfXrdNf-zb5UcRxFaWtY"
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzgwMTczMzMsImV4cCI6MTc2OTU3NDkzMywiYXVkIjoiNjc5ODBhMzU4NWZiM2I0Mzc5MzQ3ODZhIiwiaXNzIjoiZXhhbXBsZS5jb20ifQ.GVFzYJL2Vv8nVzHWKhkgjOQyS2N4-GCNWbZDFw0hqrE"
 }
