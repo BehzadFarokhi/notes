@@ -24,6 +24,14 @@ describe('Auth Controller Tests', () => {
         jest.clearAllMocks();
         jest.resetAllMocks();
     });
+
+    afterAll(async () => {
+        if (client.quit) {
+            await client.quit(); // Properly close Redis connection
+            console.log('Redis client disconnected');
+        }
+    });
+
     describe('register', () => {
         it('should register a user and return access and refresh tokens', async () => {
             const req = { body: { email: 'test@example.com', password: 'password123' } };

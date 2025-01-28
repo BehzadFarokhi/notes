@@ -18,12 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', verifyAccessToken, async (req, res, next) => {
     console.log(req.headers['authorization']);
 
-    res.send('hello from express.');
+    res.send('User is verified');
 });
 
 app.use('/auth', AuthenticationRoute);
 app.use('/note', verifyAccessToken, NoteRoute);
-
 
  app.use(async (req, res, next) => {
      next(createError.NotFound());

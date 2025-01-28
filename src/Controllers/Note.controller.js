@@ -7,28 +7,23 @@ module.exports = {
     add: async (req, res, next) => {
         try {
             const result = await noteSchema.validateAsync(req.body);
-
             const doesExists = await Note.findOne({ title: result.title });
 
             if (doesExists) throw createError.Conflict(`Note with the title: ${result.title} already exists.`);
 
             const note = new Note(result);
-
             const savedNote = await note.save();
 
             res.send({ savedNote });
 
         } catch (error) {
-
             if (error.isJoi === true) error.status = 422
-
             next(error);
         }
     },
     edit: async (req, res, next) => {
         try {
             const { id } = req.params;
-
             const { error } = idSchema.validate({id});
 
             if (error) {
@@ -36,7 +31,6 @@ module.exports = {
             }
 
             const result = await noteSchema.validateAsync(req.body);
-
             const updatedNote = await Note.findByIdAndUpdate(
                 id,
                 { $set: result },
@@ -55,7 +49,6 @@ module.exports = {
     get: async (req, res, next) => {
         try {
             const { id } = req.params;
-
             const note = await Note.findById(id)
 
             if(!note) throw createError.NotFound("Note with the given ID doesn't exist.");
@@ -81,7 +74,6 @@ module.exports = {
     delete: async (req, res, next) => {
         try {
             const { id } = req.params;
-
             const deletedNote = await Note.findByIdAndDelete(id);
 
             if (!deletedNote) {
